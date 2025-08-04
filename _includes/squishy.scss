@@ -1,5 +1,5 @@
 // ---
-// Main SCSS file for the 0xcats theme
+// Main SCSS file for the squishy theme
 // ---
 
 // 1. Core Styles & Variables
@@ -109,13 +109,11 @@ code {
 pre {
   padding: 1rem;
   overflow-x: auto;
-  // Basic syntax highlighting for Jekyll's default (Rouge)
   .highlight {
     background: none;
   }
 }
 
-// Inline code
 :not(pre) > code {
   padding: .2em .4em;
 }
@@ -128,4 +126,177 @@ blockquote {
   border-left: 4px solid var(--header-border-color);
   color: var(--nav-link-color);
   font-style: italic;
+}
+
+// 7. Post List on Home Page
+// --------------------------------------------------
+
+.post-list-heading {
+  font-size: 1.75rem;
+  margin-top: 3rem;
+  border-bottom: 1px solid var(--header-border-color);
+  padding-bottom: 0.5rem;
+}
+
+.post-list {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.post-list h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+a.post-link {
+  font-size: 1.75rem;
+  color: var(--title-color);
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: var(--nav-link-color);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.post-category {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--code-background-color);
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.post-excerpt p {
+  margin: 0;
+}
+
+// 8. Article & Post Styles
+// --------------------------------------------------
+
+.post-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--header-border-color);
+}
+
+.post-title {
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.post-content {
+  h2, h3 {
+    margin-top: 3rem;
+  }
+
+  p, ul, ol {
+    margin-bottom: 1.5rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    border-radius: 8px;
+  }
+
+  figcaption {
+    text-align: center;
+    color: var(--nav-link-color);
+    font-size: 0.9rem;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: var(--header-border-color);
+    margin: 3rem 0;
+  }
+}
+
+// 9. Table of Contents & Tags
+// --------------------------------------------------
+
+.toc {
+  border: 1px solid var(--header-border-color);
+  background-color: var(--code-background-color);
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+
+  .toc-title {
+    margin-top: 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--header-border-color);
+    padding-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  ul ul {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--nav-link-color);
+    &:hover {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+  }
+}
+
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--header-border-color);
+}
+
+.post-tags a {
+  display: inline-block;
+  background-color: var(--code-background-color);
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+  }
+}
+
+// Make the content area wider on large screens for better article reading
+@media (min-width: 1200px) {
+  .wrapper {
+    max-width: 960px;
+  }
 }
