@@ -145,4 +145,4 @@ Bug reports and pull requests are welcome on GitHub.
 
 ## 📄 License
 
-This theme is open source and available under the [MIT License](MIT).
+This theme is open source and available under the [MIT License](LICENSE).
