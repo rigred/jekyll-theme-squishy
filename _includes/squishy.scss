@@ -1,5 +1,6 @@
 // ---
 // Main SCSS file for the squishy theme
+// Refactored for a single, wide-format, universal layout.
 // ---
 
 // 1. Core Styles & Variables
@@ -14,6 +15,9 @@
   --nav-link-color: #bbb;
   --nav-link-hover-color: #fff;
   --title-color: #fff;
+  --base-font-size: 18px;
+  --small-font-size: 0.9rem;
+  --base-border-radius: 8px;
 }
 
 body {
@@ -23,14 +27,14 @@ body {
   color: var(--text-color);
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: var(--base-font-size);
 }
 
 // 2. Layout & Container
 // --------------------------------------------------
 
 .wrapper {
-  max-width: 800px;
+  max-width: 1200px; /* Expands content to use more screen space */
   margin: 0 auto;
   padding: 1rem 2rem;
 }
@@ -70,7 +74,7 @@ body {
   }
 }
 
-// 4. Typography (Headings, Links, etc.)
+// 4. Typography
 // --------------------------------------------------
 
 a {
@@ -109,9 +113,6 @@ code {
 pre {
   padding: 1rem;
   overflow-x: auto;
-  .highlight {
-    background: none;
-  }
 }
 
 :not(pre) > code {
@@ -121,14 +122,14 @@ pre {
 // 6. Blockquotes
 // --------------------------------------------------
 blockquote {
-  margin: 0;
+  margin: 1.5rem 0;
   padding-left: 1.5em;
   border-left: 4px solid var(--header-border-color);
   color: var(--nav-link-color);
   font-style: italic;
 }
 
-// 7. Post List on Home Page
+// 7. Post List (Home Page)
 // --------------------------------------------------
 
 .post-list-heading {
@@ -145,11 +146,6 @@ blockquote {
   li {
     margin-bottom: 2.5rem;
   }
-}
-
-.post-list h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
 }
 
 a.post-link {
@@ -179,21 +175,16 @@ a.post-link {
   font-size: 0.8rem;
 }
 
-.post-excerpt p {
-  margin: 0;
-}
-
 // 8. Article & Post Styles
 // --------------------------------------------------
 
 .post-header {
   margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--header-border-color);
+  text-align: center; /* Center header for a more classic title page feel */
 }
 
 .post-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -203,7 +194,7 @@ a.post-link {
     margin-top: 3rem;
   }
 
-  p, ul, ol {
+  p, ul, ol, blockquote {
     margin-bottom: 1.5rem;
   }
 
@@ -212,15 +203,7 @@ a.post-link {
     height: auto;
     display: block;
     margin: 2rem auto;
-    border-radius: 8px;
-  }
-
-  figcaption {
-    text-align: center;
-    color: var(--nav-link-color);
-    font-size: 0.9rem;
-    margin-top: -1.5rem;
-    margin-bottom: 2rem;
+    border-radius: var(--base-border-radius);
   }
 
   hr {
@@ -238,8 +221,8 @@ a.post-link {
   border: 1px solid var(--header-border-color);
   background-color: var(--code-background-color);
   padding: 1rem 2rem;
-  margin-bottom: 2rem;
-  border-radius: 8px;
+  margin: 3rem 0; /* Give TOC more space */
+  border-radius: var(--base-border-radius);
 
   .toc-title {
     margin-top: 0;
@@ -259,7 +242,7 @@ a.post-link {
   }
 
   li {
-    margin-bottom: 0.5rem;
+    margin: 0.75rem 0; /* Increased spacing for readability */
   }
 
   a {
@@ -267,7 +250,6 @@ a.post-link {
     color: var(--nav-link-color);
     &:hover {
       color: var(--primary-color);
-      text-decoration: none;
     }
   }
 }
@@ -294,9 +276,20 @@ a.post-link {
   }
 }
 
-// Make the content area wider on large screens for better article reading
-@media (min-width: 1200px) {
-  .wrapper {
-    max-width: 960px;
+// 10. Captioned Images
+// --------------------------------------------------
+.captioned-image {
+  margin: 2em 0;
+
+  img {
+    margin-bottom: 0.75em;
+    border-radius: var(--base-border-radius);
+  }
+
+  figcaption {
+    color: var(--nav-link-color);
+    font-size: var(--small-font-size);
+    text-align: center;
+    line-height: 1.4;
   }
 }

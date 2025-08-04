@@ -15,17 +15,12 @@ layout: default
     </div>
   </header>
 
-  <div class="post-body-container">
+  <div class="post-content">
     {%- if page.toc -%}
-      <nav class="toc">
-        <h2 class="toc-title">{{ page.toc_label | default: "Table of Contents" }}</h2>
-        {%- toc -%}
-      </nav>
+      {%- include toc.html -%}
     {%- endif -%}
 
-    <div class="post-content">
-      {{ content }}
-    </div>
+    {{ content }}
   </div>
 
   {%- if page.tags.size > 0 -%}

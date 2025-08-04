@@ -2,6 +2,7 @@ source "https://rubygems.org"
 gem "jekyll", "~> 4.2"
 gem "jekyll-feed"
 gem "jekyll-toc"
+gem "nokogiri", "~> 1.16"
 
 # Tells Bundler to use your local theme from the parent directory
 gem "jekyll-theme-squishy", path: ".."

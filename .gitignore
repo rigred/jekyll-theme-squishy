@@ -8,7 +8,7 @@ _site/
 
 # Ruby / Bundler
 .bundle/
-Gemfile.lock
+**/Gemfile.lock
 
 # Node.js dependencies
 node_modules/

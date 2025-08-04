@@ -4,6 +4,8 @@ plugins:
   - jekyll-feed
   - jekyll-toc
 
+plugins_dir: _plugins
+
 # jekyll-toc configuration
 toc:
   min_level: 2
