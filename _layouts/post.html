@@ -15,19 +15,17 @@ layout: default
     </div>
   </header>
 
-  {%- capture post_content -%}
-    {{ content }}
-  {%- endcapture -%}
+  <div class="post-body-container">
+    {%- if page.toc -%}
+      <nav class="toc">
+        <h2 class="toc-title">{{ page.toc_label | default: "Table of Contents" }}</h2>
+        {%- toc -%}
+      </nav>
+    {%- endif -%}
 
-  {%- if page.toc_label -%}
-    <nav class="toc">
-      <h2 class="toc-title">{{ page.toc_label }}</h2>
-      {{ post_content | toc }}
-    </nav>
-  {%- endif -%}
-
-  <div class="post-content">
-    {{ post_content }}
+    <div class="post-content">
+      {{ content }}
+    </div>
   </div>
 
   {%- if page.tags.size > 0 -%}

@@ -9,6 +9,15 @@ toc:
   min_level: 2
   max_level: 4
 
+# Default front matter settings (optional but recommended)
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      toc: false # Disable TOC by default for all posts
+
 # Point to your local theme directory
 # theme:
 #   remote_theme: rigred/jekyll-theme-squishy

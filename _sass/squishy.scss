@@ -30,8 +30,10 @@ body {
 // --------------------------------------------------
 
 .wrapper {
-  max-width: 800px;
+  max-width: 100%; // Default constrained width for non-post pages
   margin: 0 auto;
+  margin-right: 5%;
+  margin-left: 5%;
   padding: 1rem 2rem;
 }
 
@@ -231,45 +233,12 @@ a.post-link {
   }
 }
 
-// 9. Table of Contents & Tags
+// 9. TOC & Post Footer
 // --------------------------------------------------
 
+// By default, TOC is hidden (for mobile-first). It's enabled in the media query below.
 .toc {
-  border: 1px solid var(--header-border-color);
-  background-color: var(--code-background-color);
-  padding: 1rem 2rem;
-  margin-bottom: 2rem;
-  border-radius: 8px;
-
-  .toc-title {
-    margin-top: 0;
-    font-size: 1.2rem;
-    border-bottom: 1px solid var(--header-border-color);
-    padding-bottom: 0.5rem;
-  }
-
-  ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
-  }
-
-  ul ul {
-    padding-left: 20px;
-  }
-
-  li {
-    margin-bottom: 0.5rem;
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--nav-link-color);
-    &:hover {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-  }
+  display: none;
 }
 
 .post-footer {
@@ -294,9 +263,63 @@ a.post-link {
   }
 }
 
-// Make the content area wider on large screens for better article reading
+
+// 10. Widescreen Layout with Sticky TOC Sidebar
+// --------------------------------------------------
 @media (min-width: 1200px) {
-  .wrapper {
-    max-width: 960px;
+
+  // Allow the main wrapper to become much wider on post pages
+  main > .wrapper {
+    max-width: 100%;
+    padding: 1rem 3rem; // Adjust side padding for the wider view
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  // Use a grid layout on the article itself
+  article.post {
+    display: grid;
+    // Creates three columns: a fixed sidebar, the main content, and an empty spacer
+    grid-template-columns: 280px 1fr 280px;
+    gap: 4rem; // Sets the space between the sidebar and content
+  }
+
+  // Place the TOC in the first column and make it sticky
+  .toc {
+    display: block;
+    grid-column: 1 / 2;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    // Clean up sidebar appearance
+    border: none;
+    background: none;
+    padding: 0;
+
+    .toc-title {
+      font-size: 1.1rem;
+    }
+    ul ul {
+      padding-left: 1.5rem;
+    }
+  }
+
+  // Place the header, main body, and footer in the center content column
+  .post-header,
+  .post-body-container,
+  .post-footer {
+    grid-column: 2 / 3;
+    min-width: 0; // Prevents overflow issues
+  }
+
+  // The post-body-container no longer needs to be a layout-provider
+  .post-body-container {
+    display: block;
+  }
+
+  // The content lives inside the body container, so we hide the duplicate TOC
+  .post-body-container > .toc {
+    display: none;
   }
 }
