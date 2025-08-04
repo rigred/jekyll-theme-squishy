@@ -4,5 +4,5 @@ plugins:
   - jekyll-feed
 
 # Point to your local theme directory
-theme:
-  remote_theme: rigred/jekyll-theme-squishy
+# theme:
+#   remote_theme: rigred/jekyll-theme-squishy
