@@ -1,0 +1,18 @@
+# _data/navigation.yml
+#
+# Defines the main navigation links that appear in the header.
+#
+# - title: The text that will appear in the link.
+#   url: The destination URL.
+
+- title: Home
+  url: /
+
+- title: About
+  url: /about/
+
+- title: Categories
+  url: /categories/
+
+- title: My GitHub
+  url: https://github.com/rigred

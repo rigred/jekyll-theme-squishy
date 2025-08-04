@@ -3,10 +3,15 @@
     <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
 
     <nav class="main-nav">
-      <a href="{{ "/" | relative_url }}">Home</a>
-      <a href="{{ "/about.html" | relative_url }}">About</a>
-      <!-- Add other navigation links here -->
+      {%- comment -%}
+        Look for navigation data in the user's site first.
+        If it doesn't exist, use the theme's default data.
+      {%- endcomment -%}
+      {%- assign nav_links = site.data.navigation | default: theme.data.navigation -%}
+
+      {%- for link in nav_links -%}
+        <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+      {%- endfor -%}
     </nav>
   </div>
 </header>
-
