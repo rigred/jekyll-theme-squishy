@@ -2,6 +2,12 @@ title: Test Site for Squishy Theme
 theme: jekyll-theme-squishy
 plugins:
   - jekyll-feed
+  - jekyll-toc
+
+# jekyll-toc configuration
+toc:
+  min_level: 2
+  max_level: 4
 
 # Point to your local theme directory
 # theme:
