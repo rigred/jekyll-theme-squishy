@@ -1,0 +1,18 @@
+{%- comment -%}
+  This version reads the gallery data directly from the post's
+  front matter (e.g., `page.gallery`).
+{%- endcomment -%}
+
+{%- if page.gallery -%}
+  <div class="gallery-grid">
+    {%- for image in page.gallery -%}
+      <figure class="captioned-image">
+        <img src="{{ image.url | relative_url }}" alt="{{ image.alt | default: "Gallery image" | escape }}">
+        <figcaption>{{ image.alt | escape }}</figcaption>
+      </figure>
+    {%- endfor -%}
+  </div>
+  {%- if include.caption -%}
+    <p class="gallery-caption"><em>{{ include.caption }}</em></p>
+  {%- endif -%}
+{%- endif -%}
