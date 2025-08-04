@@ -1,0 +1,73 @@
+/* General Body & Typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0;           /* Light text */
+  margin: 0;
+  padding: 0;
+}
+
+/* Centered Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+/* Header */
+.masthead {
+  border-bottom: 1px solid #333;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+.masthead .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Basic Navigation */
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #bbb;
+}
+nav a:hover {
+  color: #fff;
+}
+
+/* Links & Headings */
+a {
+  color: #bb86fc; /* A nice purple for links */
+}
+a:hover {
+  text-decoration: none;
+}
+h1, h2, h3 {
+  line-height: 1.2;
+  margin-top: 2rem;
+  color: #fff;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+
+/* Code blocks */
+pre, code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background-color: #252525;
+  border-radius: 4px;
+}
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+code {
+  padding: .2em .4em;
+}
