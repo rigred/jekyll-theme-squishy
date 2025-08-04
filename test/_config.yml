@@ -20,6 +20,23 @@ defaults:
     values:
       toc: false # Disable TOC by default for all posts
 
+sass:
+  style: compressed
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE.txt
+  
 # Point to your local theme directory
 # theme:
 #   remote_theme: rigred/jekyll-theme-squishy
