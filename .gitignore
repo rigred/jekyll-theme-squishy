@@ -1,5 +1,24 @@
-_site
-.sass-cache
-.jekyll-cache
+# Jekyll-generated files
+_site/
+.jekyll-cache/
 .jekyll-metadata
-vendor
+
+# Sass/SCSS cache
+.sass-cache/
+
+# Ruby / Bundler
+.bundle/
+Gemfile.lock
+
+# Node.js dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Common system files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/
